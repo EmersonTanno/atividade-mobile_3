@@ -62,8 +62,13 @@ class _TransacaoScreenState extends State<TransacaoScreen> {
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: _adicionarTransacao,
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.zero,
+                ),
+              ),
               child: Text(
-                'Adicionar Transação',
+                'Realizar Transação',
                 style: TextStyle(color: Colors.green),
               ),
             ),
@@ -72,10 +77,11 @@ class _TransacaoScreenState extends State<TransacaoScreen> {
                 itemCount: _transacoes.length,
                 itemBuilder: (context, index) {
                   return Card(
+                    color: Colors.green,
                     child: ListTile(
                       title: Text(
                         _transacoes[index],
-                        style: TextStyle(color: Colors.green),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   );
